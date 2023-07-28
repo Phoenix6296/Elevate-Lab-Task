@@ -19,9 +19,8 @@ export const Dropdown = ({
           );
           setValue(selectedOption);
         }}
-        className={`${className} cursor-pointer block appearance-none w-full bg-white px-4 py-2.5 pr-8 rounded shadow leading-tight outline-none`}
+        className={`${className} cursor-pointer block appearance-none w-full px-4 py-2.5 pr-8 rounded shadow leading-tight outline-none`}
       >
-        {/* Render the default option if defaultValue is provided */}
         {defaultValue && (
           <option value="">{capitalizeFirstLetter(defaultValue)}</option>
         )}
@@ -34,7 +33,7 @@ export const Dropdown = ({
           </option>
         ))}
       </select>
-      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+      <div className="pointer-events-none absolute inset-y-0 right-0 lg:flex hidden items-center px-2 text-gray-700">
         <svg
           width="24"
           height="24"

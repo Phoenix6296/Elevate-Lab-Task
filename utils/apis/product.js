@@ -8,6 +8,7 @@ export const getProducts = async (setData, setLoading) => {
     setData(response.data);
     setLoading(false);
   } else {
+    setLoading(false);
     toast.error(response.message || "Something went wrong");
   }
 };

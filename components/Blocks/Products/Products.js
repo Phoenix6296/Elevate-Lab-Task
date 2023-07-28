@@ -4,8 +4,10 @@ import { capitalizeFirstLetter } from "@/utils/helper";
 const Card = ({ product }) => {
   const { title, image, price } = product;
   return (
-    <div className="rounded-md p-5 flex flex-col items-center justify-between gap-5 shadow-lg m-5">
-      <h3 className="font-bold text-lg text-center truncate w-full">{title}</h3>
+    <div className="rounded-md p-5 flex flex-col items-center justify-between gap-5 shadow-lg my-5 w-full">
+      <h3 className="font-bold text-lg text-center truncate md:w-full w-60">
+        {title}
+      </h3>
       <h4>
         <span className="text-yellow">Price: </span>
         {`₹${price}`}
@@ -42,9 +44,9 @@ export const Products = ({ products, loading, selectedCategory }) => {
         products={products}
         selectedCategory={selectedCategory}
       />
-      <section className="grid grid-cols-3 px-20">
-        {loading ? <ProductCardSkeleton size={6} /> : null}
-        {!loading && products.length === 0 ? <NoProducts /> : null}
+      <section className="grid lg:grid-cols-3 md:grid-cols-2 gird-cols-1 gap-5 lg:px-20 md:px-10 px-5">
+        {loading && <ProductCardSkeleton size={6} />}
+        {!loading && products.length === 0 && <NoProducts />}
         {!loading && products.length > 0 && <ProductList products={products} />}
       </section>
     </>
